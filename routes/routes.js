@@ -6,6 +6,8 @@ const route = express()
 
 const postSchema = require('../schema/schema')
 
+const body=require('body-parser')
+route.use(body.json())
 route.get('/getPost', async (req, res) => {
     const data = await postSchema.find()
     // console.log(data)

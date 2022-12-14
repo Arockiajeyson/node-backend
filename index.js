@@ -11,7 +11,8 @@ var cors = require('cors')
 app.use(cors())
 
 const DataBase=require('./dataBase/mongoDb')
-
+const body=require('body-parser')
+app.use(body.json())
 dotenv.config()
 
 // DataBase()
