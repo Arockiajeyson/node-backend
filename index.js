@@ -6,6 +6,10 @@ const dotenv =require('dotenv')
 
 const routes=require('./routes/routes')
 
+var cors = require('cors')
+
+app.use(cors())
+
 const DataBase=require('./dataBase/mongoDb')
 
 dotenv.config()
