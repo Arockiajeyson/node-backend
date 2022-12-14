@@ -14,12 +14,13 @@ const DataBase=require('./dataBase/mongoDb')
 
 dotenv.config()
 
-DataBase()
+// DataBase()
 
 app.use(express.json({limit:"5mb"}))
 
 app.use('/',routes)
 
-app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT,async ()=>{
+    await DataBase()
     console.log("port connected")
 })

@@ -21,15 +21,16 @@ route.post('/createPost', async (req, res) => {
             folder:"img-folder"
         })
 
-        const data =await postSchema.create({
+        const datas =await postSchema.create({
             name:name,
             location:location,
             likes:likes,
             description:description,
-            PostImage:imgage.secure_url,
+            PostImage: imgage.secure_url,
             date:date
         })
-        data.save()
+        // console.log(datas)
+        datas.save()
         res.status(200).json({
             message:"Post Saved"
         })
