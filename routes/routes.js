@@ -26,10 +26,8 @@ route.post('/createPost', async (req, res) => {
         const datas =await postSchema.create({
             name:name,
             location:location,
-            likes:likes,
             description:description,
             PostImage: imgage.secure_url,
-            date:date
         })
         // console.log(datas)
         datas.save()
